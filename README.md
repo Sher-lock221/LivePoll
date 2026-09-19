@@ -1,6 +1,6 @@
 # LivePoll
 
-A deliberately small, polished live polling tool. A signed-in host creates a poll, copies its URL, and every viewer sees vote totals change immediately—no refresh required.
+A deliberately small, polished live polling tool. A signed-in host creates a poll, copies its URL, and every viewer sees vote totals change immediately; no refresh required.
 
 ## Stack and responsibilities
 
