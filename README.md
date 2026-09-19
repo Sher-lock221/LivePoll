@@ -25,14 +25,14 @@ For frontend-only development, run `npm install && npm run dev` in `frontend/`, 
 
 ## Deploy
 
-The supplied Dockerfiles keep deployment platform-neutral. Create these four resources with your preferred host (Railway, Fly.io, Render, or a similar Docker host):
+The supplied Dockerfiles keep deployment platform-neutral. Deploy the production application as separate frontend and backend services.
 
 1. A MongoDB database; set its connection string as `MONGO_URI` and use `MONGO_DB=livepoll`.
 2. A Redis service; set `REDIS_URL` to its complete connection URL. (The local Docker setup instead uses `REDIS_ADDR=redis:6379`.)
 3. A backend Docker service from `backend/Dockerfile`; set `JWT_SECRET` to a long random value and `CORS_ORIGINS` to the frontend's final HTTPS URL.
-4. A frontend Docker service from `frontend/Dockerfile`, building with `VITE_API_URL=https://YOUR-API.example.com/api`.
+4. A React + Vite frontend deployed to Vercel from `frontend/`; set `VITE_API_URL=https://YOUR-API.example.com/api`.
 
-The frontend URL is the shareable live link. HTTPS is important: it enables reliable clipboard sharing and avoids browser restrictions around streaming connections.
+The Vercel frontend URL is the shareable live link. The backend remains a separate service and is accessed through the configured API URL.
 
 ## API overview
 
